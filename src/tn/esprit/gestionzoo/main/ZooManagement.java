@@ -1,12 +1,13 @@
+package tn.esprit.gestionzoo.main;
 import java.util.Scanner;
-
+import tn.esprit.gestionzoo.entities.* ;
 public class ZooManagement {
     public static void main(String[] args){
-        int nbrCages =20 ;
+        /** int nbrCages =20 ;
         String zooName="my zoo";
         System.out.println(zooName +" comporte "+nbrCages+" cages");
 
-        /**
+
 
         Scanner put  = new Scanner(System.in);
         System.out.println("entrer le nombre des cages");
@@ -15,7 +16,7 @@ public class ZooManagement {
         String name = put.next();
 
         System.out.println(name +" comporte "+nbr+" cages");
-    */
+
         //****************************
         Animal lion = new Animal();
         lion.family= "lion"; lion.age=26; lion.name="lion";lion.isMammal=false;
@@ -53,5 +54,18 @@ public class ZooManagement {
         System.out.println(newZoo.isZooFull());
         
         System.out.println(newZoo.comparerZoo(newZoo,myZoo2));
+         */
+
+        Zoo myZoo= new Zoo("zoo","tunis");
+        Animal cat = new Animal("choo","chouchou",2,true);
+        Animal dog = new Animal("dog","Leo",4,true);
+        myZoo.displayZoo();
+        cat.setAge(-2);
+        cat.displayAnimal();
+        myZoo.addAnimal(cat);
+        myZoo.addAnimal(dog);
+        myZoo.setName("");
+        myZoo.displayZoo();
+
     }
 }
