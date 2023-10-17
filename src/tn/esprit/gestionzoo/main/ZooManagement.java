@@ -55,7 +55,7 @@ public class ZooManagement {
         
         System.out.println(newZoo.comparerZoo(newZoo,myZoo2));
          */
-
+        /*
         Zoo myZoo= new Zoo("zoo","tunis");
         Animal cat = new Animal("choo","chouchou",2,true);
         Animal dog = new Animal("dog","Leo",4,true);
@@ -66,6 +66,20 @@ public class ZooManagement {
         myZoo.addAnimal(dog);
         myZoo.setName("");
         myZoo.displayZoo();
+        */
+
+        Dolphin D = new Dolphin("dolphini", "didi", 4, false, "sea", 20);
+        System.out.println(D);
+        Penguin p = new Penguin("penni", "fifi", 4, false, "sea", 600);
+        System.out.println(p);
+        Aquatic a = new Aquatic("aqui", "kiki", 4, false, "sea");
+        System.out.println(a);
+        Terrestrial t = new Terrestrial("terres", "titi", 2, false, 4);
+        System.out.println(t);
+
+        D.swim();
+        p.swim();
+        a.swim();
 
     }
 }
