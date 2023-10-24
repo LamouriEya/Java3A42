@@ -72,14 +72,34 @@ public class ZooManagement {
         System.out.println(D);
         Penguin p = new Penguin("penni", "fifi", 4, false, "sea", 600);
         System.out.println(p);
-        Aquatic a = new Aquatic("aqui", "kiki", 4, false, "sea");
-        System.out.println(a);
+        //Aquatic a = new Aquatic("aqui", "kiki", 4, false, "sea");
+        //System.out.println(a);
+        //Aquatic aa = new Aquatic("aqui", "quiqui", 4, false, "sea");
+        //System.out.println(a);
         Terrestrial t = new Terrestrial("terres", "titi", 2, false, 4);
         System.out.println(t);
 
         D.swim();
         p.swim();
-        a.swim();
+        //a.swim();
+        Zoo myZoo= new Zoo("zoo","tunis");
+        myZoo.addAquaticAnimal(D);
+        myZoo.addAquaticAnimal(p);
+        myZoo.addAquaticAnimal(D);
+        for(int i=0 ; i<myZoo.getAquaticAnimals().length;i++){
+            Aquatic[] tab= myZoo.getAquaticAnimals();
+            //tab[i].swim();
+        }
+        myZoo.displayNumberOfAquaticsByType();
 
+        System.out.println( D.equals(p));
+        Penguin p1 = new Penguin("penni", "fifi", 4, false, "sea", 600);
+        Penguin p2 = new Penguin("penni", "fifi", 4, false, "sea", 200);
+        Penguin p3 = new Penguin("penni", "fifi", 4, false, "sea", 1600);
+        myZoo.addAquaticAnimal(p);
+        myZoo.addAquaticAnimal(p1);
+        myZoo.addAquaticAnimal(p2);
+        myZoo.addAquaticAnimal(p3);
+        System.out.println(myZoo.maxPenguinSwimmingDepth());
     }
 }

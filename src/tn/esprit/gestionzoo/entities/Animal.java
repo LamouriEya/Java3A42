@@ -23,7 +23,7 @@ public class Animal {
         this.family = family;
     }
 
-    public String getName() {
+    public  String getName() {
         return name;
     }
 
