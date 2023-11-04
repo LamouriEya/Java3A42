@@ -2,7 +2,7 @@ package tn.esprit.gestionzoo.main;
 import java.util.Scanner;
 import tn.esprit.gestionzoo.entities.* ;
 public class ZooManagement {
-    public static void main(String[] args){
+    public static void main(String[] args) throws ZooFullException {
         /** int nbrCages =20 ;
         String zooName="my zoo";
         System.out.println(zooName +" comporte "+nbrCages+" cages");
@@ -67,7 +67,7 @@ public class ZooManagement {
         myZoo.setName("");
         myZoo.displayZoo();
         */
-
+/*
         Dolphin D = new Dolphin("dolphini", "didi", 4, false, "sea", 20);
         System.out.println(D);
         Penguin p = new Penguin("penni", "fifi", 4, false, "sea", 600);
@@ -88,7 +88,7 @@ public class ZooManagement {
         myZoo.addAquaticAnimal(D);
         for(int i=0 ; i<myZoo.getAquaticAnimals().length;i++){
             Aquatic[] tab= myZoo.getAquaticAnimals();
-            //tab[i].swim();
+            tab[i].swim();
         }
         myZoo.displayNumberOfAquaticsByType();
 
@@ -101,5 +101,22 @@ public class ZooManagement {
         myZoo.addAquaticAnimal(p2);
         myZoo.addAquaticAnimal(p3);
         System.out.println(myZoo.maxPenguinSwimmingDepth());
+
+ */
+        Zoo zoo1=new Zoo("nourou","xxxx");
+        try{
+            zoo1.addAnimal(new Animal("doggy", "dog", 2, false));
+            zoo1.addAnimal(new Animal("doggy1", "dog1", 2, false));
+
+            zoo1.addAnimal(new Animal("doggy2", "dog2", 2, false));
+
+            zoo1.addAnimal(new Animal("doggy23", "dog3", -2, false));
+        }catch (ZooFullException e){
+            System.out.println(e.getMessage());
+        }catch (InvalidAgeException i){
+            System.out.println("Invalid age exception"+i.getMessage());
+        }
+        System.out.println(zoo1);
+        zoo1.zooAnimals();
     }
 }

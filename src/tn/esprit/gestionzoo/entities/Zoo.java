@@ -4,7 +4,7 @@ import tn.esprit.gestionzoo.entities.Animal;
 public class Zoo {
     Animal[] animals;
     private String name,city;
-    final int nbrCages=2;
+    final int nbrCages=3;
     Aquatic[] aquaticAnimals = new Aquatic[10];
 
     public Aquatic[] getAquaticAnimals() {
@@ -52,7 +52,7 @@ public class Zoo {
         System.out.println("la zoo "+ name+" city :"+city+" nbrCages :"+ nbrCages);
     }
 
-    public boolean addAnimal(Animal animal) {
+   /* public boolean addAnimal(Animal animal) {
         if (isZooFull()){
             System.out.println("No available cage to add animal " + animal.getName() + ".");
             return false;
@@ -72,7 +72,37 @@ public class Zoo {
             }
         }
         return false;
-    }
+    }*/
+    // Intruction 32 + 33
+   public void addAnimal(Animal animal) throws ZooFullException,InvalidAgeException {
+
+           if (searchAnimal(animal) != -1) {
+               System.out.println("Animal " + animal.getName() + " already exists in the zoo.");
+           }
+           if(animal.getAge()< 0){
+               throw new InvalidAgeException("Invalid age for "+animal.getName()+":"+ animal.getAge());
+           }
+
+            int i=0;
+            boolean test=true;
+
+           while (test){
+               if (animals[i] == null) {
+                   animals[i] = animal;
+                   test=false;
+                   System.out.println("Animal " + animal.getName() + " added successfully to the zoo.");
+
+               }
+               else{
+                   i++;
+               }
+           }
+           if (i >= animals.length){
+               throw new ZooFullException();
+           }
+
+
+   }
 
     public void zooAnimals() {
         System.out.println("Animals in " + name + " Zoo:");
@@ -86,11 +116,9 @@ public class Zoo {
     public int searchAnimal(Animal animal) {
         for (int i = 0; i < nbrCages; i++) {
             if (animals[i] != null && animal.getName().equals(animals[i].getName())) {
-                System.out.println("Animal " + animal.getName() + " exists in the zoo.");
                 return i;
             }
         }
-        System.out.println("Animal " + animal.getName() + " not found in the zoo.");
         return -1;
     }
     @Override
