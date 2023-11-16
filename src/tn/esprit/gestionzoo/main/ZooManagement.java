@@ -118,5 +118,11 @@ public class ZooManagement {
         }
         System.out.println(zoo1);
         zoo1.zooAnimals();
+
+        Terrestrial t = new Terrestrial("terres", "titi", 2, false, 4);
+        //Aquatic a = new Aquatic("aqui", "kiki", 4, false, "sea") ;
+        Penguin p = new Penguin("penni", "fifi", 4, false, "sea", 600);
+        t.eatPlantAndMeet(Food.BOTH);
+        p.eatMeat(Food.MEAT);
     }
 }
