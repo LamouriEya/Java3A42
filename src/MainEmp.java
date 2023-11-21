@@ -1,4 +1,4 @@
-public class Main {
+public class MainEmp {
     public static void main(String[] args) {
         SocieteArrayList societe = new SocieteArrayList();
         Employe emp1=new Employe(60,5,"eya","lamouri","info");
