@@ -1,3 +1,5 @@
+package project.prosit.List;
+
 public interface LGestion<T>{
     public void ajouterEmploye(T t);
     public boolean rechercherEmploye(String nom);

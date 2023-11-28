@@ -1,3 +1,5 @@
+package project.prosit.List;
+
 import java.util.Objects;
 
 public class Employe implements Comparable<Employe> {

@@ -1,3 +1,7 @@
+package project.prosit.List;
+
+import project.prosit.List.Employe;
+
 public class MainEmp {
     public static void main(String[] args) {
         SocieteArrayList societe = new SocieteArrayList();

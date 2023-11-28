@@ -1,3 +1,8 @@
+package project.prosit.HashSet;
+
+import project.prosit.HashSet.Departement;
+import project.prosit.HashSet.DepartementHashSet;
+
 import java.util.TreeSet;
 
 public class MainDep {

@@ -1,6 +1,11 @@
+package project.prosit.List;
+
+import project.prosit.List.Employe;
+import project.prosit.List.LGestion;
+
 import java.util.*;
 
-public class SocieteArrayList implements LGestion<Employe>{
+public class SocieteArrayList implements LGestion<Employe> {
 
     List<Employe> tabE ;
     public SocieteArrayList(){
@@ -59,6 +64,14 @@ public class SocieteArrayList implements LGestion<Employe>{
                 return o1.getGrade()-o2.getGrade();
             }
         };
+
+        Collections.sort(tabE,nomDepartementComparator.thenComparing(gradComparator));
+
+    }
+
+    public void trierEmployeParNomDepartementEtGrade2() {
+        Comparator<Employe> nomDepartementComparator= (( o1,  o2) -> o1.getDep_name().compareTo(o2.getDep_name()));
+        Comparator<Employe> gradComparator= ( o1,  o2) -> ( o1.getGrade()-o2.getGrade());
 
         Collections.sort(tabE,nomDepartementComparator.thenComparing(gradComparator));
 

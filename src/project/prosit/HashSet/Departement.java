@@ -1,3 +1,5 @@
+package project.prosit.HashSet;
+
 import java.util.Objects;
 
 public class Departement implements Comparable<Departement> {

@@ -1,9 +1,11 @@
+package project.prosit.HashSet;
+
+import project.prosit.HashSet.Departement;
+
 import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 import java.util.TreeSet;
 
-public class DepartementHashSet implements IDepartement<Departement>{
+public class DepartementHashSet implements IDepartement<Departement> {
     HashSet<Departement> tabD;
     public DepartementHashSet(){
         tabD= new HashSet<Departement>();

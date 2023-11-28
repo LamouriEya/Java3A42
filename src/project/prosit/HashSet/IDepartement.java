@@ -1,3 +1,5 @@
+package project.prosit.HashSet;
+
 import java.util.TreeSet;
 
 public interface IDepartement<T>{
